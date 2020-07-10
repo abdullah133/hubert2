@@ -1,0 +1,46 @@
+{% extends 'base_app/base.html' %}
+{% block title %}Kontakt{% endblock %}
+
+{%  load static %}
+
+{% block news_klasse %}
+class="header-section"
+{% endblock %}
+
+{% block news_klasse_2 %}
+{% endblock %}
+	{% block content %}
+	<!-- Contact Section -->
+	<section class="contact-page set-bg" data-setbg="{% static 'base_app/img/IMG_7806.jpg' %}">
+		<div class="sp-container">
+			<div class="row">
+
+				<div class="col-lg-7 offset-lg-1">
+					<form class="contact-form">
+						{% csrf_token %}
+				{{form.errors}}
+						<div class="row">
+							<div class="col-md-6">
+								{{ form.name }}
+                {{ form.name.errors }}
+							</div>
+							<div class="col-md-6">
+								{{ form.user_email }}
+                {{ form.user_email.errors }}
+							</div>
+							<div class="col-md-12">
+								{{ form.betreff }}
+              {{ form.betreff.errors }}
+							{{ form.nachricht }}
+						{{ form.nachricht.errors }}
+								<button class="site-btn"><span>senden</span></button>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Contact Section end -->
+
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends 'base_app/base.html' %}
+{% load static %}
+
+{% block news_klasse %}
+class="header-section"
+{% endblock %}
+
+{% block news_klasse_2 %}
+{% endblock %}
+{% block content %}
+	<!-- portfilio Section -->
+
+    {% for element in kategorie_gallery %}
+{{element}}
+{% for element_2 in bilder_gallery.all %}
+{{element_2}}
+{% endfor %}
+    {% endfor %}
+
+
+	{% endblock %}

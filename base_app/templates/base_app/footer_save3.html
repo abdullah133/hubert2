@@ -1,0 +1,38 @@
+{% load static %}
+<footer class="footer-section set-bg" data-setbg="{% static 'base_app/img/6.JPG' %}">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="about-content-warp text-white">
+          Hubertus Mayr
+          <p>{{kontaktinfo.beschreibung|linebreaks|urlize}}</p>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6">
+        <div class="about-content-warp text-white">
+          <h6>Kontaktiere mich </h6>
+          <ul><br>
+            <li>{{kontaktinfo.telefon}}</li>
+            <li>{{kontaktinfo.email}}</li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6">
+        <div class="about-content-warp text-white">
+          <h6>Sozial Media</h6>
+<br>
+            <a href="{{ kontaktinfo.facebook_link }}"><i class="fa fa-facebook  "> Hubertus Mayr</i></a>
+
+
+        </div>
+      </div>
+    </div>
+
+<div class="about-content-warp text-white">
+
+
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> alle rechte vorbehalten | Diese Webseite ist mit <i class="fa fa-heart-o" aria-hidden="true"></i> gemacht  <a href="#" target="_blank">Abdullah Kroum</a>
+</div>
+
+  </div>
+</footer>

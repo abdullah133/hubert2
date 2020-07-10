@@ -1,0 +1,31 @@
+{% extends 'base_app/base.html' %}
+{% load static %}
+
+{% block news_klasse %}
+class="header-section"
+{% endblock %}
+
+{% block news_klasse_2 %}
+{% endblock %}
+{% block content %}
+
+	<!-- portfilio single -->
+    <section class="portfilio-single set-bg" data-setbg="{{object.bild.large.url}}">
+        <div class="sp-container">
+            <div class="portfolio-single-content text-white">
+                <span>Proffesional Photographer</span>
+				<h2>Artistic Photos</h2>
+				<p>{{ object.text_1|linebreaks|urlize }}</p>
+               <p>{{ object.text_2|linebreaks|urlize }}</p>
+               <ul>
+                   <li><h6>Name:</h6><span>Hubertus Mayr</span></li>
+                   <li><h6>Post:</h6><span>{{ object.datum }}</span></li>
+
+               </ul>
+            </div>
+        </div>
+	</section>
+	<!-- Portfolio single end -->
+
+
+{% endblock %}

@@ -1,0 +1,46 @@
+{% load static %}
+<footer class="footer-section set-bg" data-setbg="{% static 'base_app/img/Footer_foto.png' %}">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6">
+
+        <div class="footer-about mein_text_sichtbar">
+          <img src="{% static 'base_app/img/logo_100px.png' %}" alt="">
+          <p>{{kontaktinfo.beschreibung|linebreaks|urlize}}</p>
+        </div>
+      </div>
+
+
+
+
+
+      <div class="col-lg-3 col-md-6">
+        <div class="footer-info">
+          <h6>Kontaktiere mich </h6>
+          <ul>
+            <li class="mein_text_sichtbar"><p>{{kontaktinfo.telefon}}</p></li>
+            <li class="mein_text_sichtbar"><p>{{kontaktinfo.email}}</p></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6">
+        <div class="footer-info">
+          <h6>Links</h6>
+          <ul>
+            <li class="nicht_blauer_link">  <a href="{{ kontaktinfo.facebook_link }}"><i class="fa fa-facebook-square mx-2" aria-hidden="true"></i>Hubertus Mayr</a></li>
+
+          </ul>
+
+
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Copyright -->
+     <div class="footer-copyright text-center py-3 text-white">© 2020 Copyright:
+       <a> Hubertus Mayr</a>
+     </div>
+     <!-- Copyright -->
+  </div>
+</footer>

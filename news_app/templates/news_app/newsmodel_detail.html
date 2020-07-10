@@ -1,0 +1,61 @@
+{% extends 'base_app/base.html' %}
+{% load static %}
+{% block title %}Home{% endblock %}
+{% block head %}
+
+{% endblock %}
+{% block news %}schwarzer_hintergrund_navbar{% endblock %}
+
+{% block content %}
+
+
+<section class="blog-page set-bg">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+
+
+        <div class="blog-item">
+          <div class="blog-thumb">
+            <img src="{{object.bild.large.url}}" width="80%" alt="">
+
+            <div class="blog-date">{{object.datum}}</div>
+
+          </div>
+
+
+
+          <div class="blog-content">
+            <h3>{{object.titel}}</h3>
+            <div class="blog-metas">
+              <div class="blog-meta">In Photography</div>
+              <div class="blog-meta">By Hubertus Meyr</div>
+            </div>
+            <p> {{ object.text|linebreaks|urlize }} </p>
+
+
+          </div>
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

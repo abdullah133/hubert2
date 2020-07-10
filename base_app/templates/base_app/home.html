@@ -1,0 +1,65 @@
+{% extends 'base_app/base.html' %}
+{% load static %}
+
+
+{% block title %}Home{% endblock %}
+
+
+
+{% block news_klasse %}
+class="header-section"
+{% endblock %}
+
+{% block news_klasse_2 %}
+{% endblock %}
+
+{% block content %}
+
+<div id="fullpage">
+
+
+
+
+
+  <div class="section fp-auto-height" id="hero-section">
+
+    {% for element in home_beschreibung %}
+    <div class="hero-slider owl-carousel">
+      <div class="hs-item set-bg" data-setbg="{% static 'base_app/img/home_foto.jpg' %}">
+        <div class="container text-white">
+          <h1>{{element.titel}} </h1>
+          <h2>{{element.untertitel}} </h2>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-link">
+      <p>kontaktiere mich</p>
+      <a href="{% url 'contact_app:contact_page' %}"><img src="{% static 'base_app/img/me.png' %}" alt=""></a>
+    </div>
+
+    {% endfor %}
+
+  </div>
+
+  {% for element in object_list %}
+
+  <div class="section about-section about-one set-bg " data-setbg="{% if forloop.counter == 1 %}{% static 'base_app/img/erste_foto_home.jpg' %}
+                                                                  {% elif forloop.counter == 2 %}{% static 'base_app/img/zweites_foto_home.png' %}
+                                                                  {% else %}{% static 'base_app/img/dritte_foto_home.png' %}{% endif %}">
+    <div class="about-content-warp {% cycle 'mein_text_sichtbar title_withe' 'mein_text_sichtbar_black' %}">
+      <h2>{{element.titel}}</h2>
+      <p>{{element.text}}</p>
+    </div>
+  </div>
+  {% endfor %}
+
+
+
+
+
+
+</div>
+
+
+{% endblock %}

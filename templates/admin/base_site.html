@@ -1,0 +1,41 @@
+{% extends "admin/base.html" %}
+{% block extrastyle %}
+<style>
+  #header {
+    background-color:#1A0000
+;
+    color: white
+  }
+
+  .module h2,
+  .module caption,
+  .inline-group h2 {
+    margin: 0;
+    padding: 8px;
+    font-weight: 400;
+    font-size: 13px;
+    text-align: left;
+    background: #1A0000;
+    color: #1A0000;
+  }
+  div.breadcrumbs {
+    background: #1A0000;
+
+}
+.object-tools a:focus, .object-tools a:hover {
+    background-color: red;
+}
+
+
+</style>
+{% endblock %}
+{% block branding %}
+{% load static %}
+<h1 id="site-name">
+
+    <a href="{% url 'admin:index' %}">
+        <img src="{% static 'base_app/img/me.png' %}" height="80px" />
+    </a>
+</h1>
+
+{% endblock %}

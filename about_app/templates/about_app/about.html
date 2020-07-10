@@ -1,0 +1,53 @@
+{% extends 'base_app/base.html' %}
+{% load static %}
+{% block news_klasse %}
+class="header-section"
+{% endblock %}
+
+{% block news_klasse_2 %}
+{% endblock %}
+
+{% block content %}
+	<div id="fullpage">
+
+
+
+		<div class="section fp-auto-height" id="hero-section">
+			<div class="hero-section-2 d-flex align-items-center set-bg" data-setbg="{% static 'base_app/img/about_foto.png' %}">
+				<div class="sp-container">
+					<div class="hero-content text-white mein_text_sichtbar">
+						 {% for element in haupt_beschreibung %}
+						<span>{{element.aufgaben}}</span>
+						<h2>{{element.name}}</h2>
+						<span>{{element.beschreibung}}</span>
+{% endfor %}
+					</div>
+				</div>
+			</div>
+			<div class="contact-link">
+				<p>Kontatiere Mich</p>
+				<a href="{% url 'contact_app:contact_page' %}"><img src="{% static 'base_app/img/me.png' %}" alt=""></a>
+			</div>
+		</div>
+
+
+
+
+		<div class="section testimonial-section set-bg" data-setbg="{% static 'base_app/img/zweites_about_foto.png' %}">
+			<div class="container">
+				<div class="about_zweites_bild_text">
+						 {% for element in untere_zusetzliche_beschreibung %}
+					<h2 class="mt-5 mb-5">{{ element.titel }}</h2>
+					<p>{{ element.beschreibung }}</p>
+
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+
+
+
+
+
+	</div>
+{% endblock %}

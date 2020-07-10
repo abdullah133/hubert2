@@ -1,0 +1,41 @@
+{% extends 'base_app/base.html' %}
+{% load static %}
+
+{% block news_klasse %}
+class="header-section"
+{% endblock %}
+
+{% block news_klasse_2 %}
+{% endblock %}
+{% block content %}
+	<!-- portfilio Section -->
+
+  <section class="portfilio-page">
+  <div class="portfolios-area">
+
+    <div class="grid-sizer"></div>
+    <div class="grid-item portfolio-item __big __wide">
+      <div class="portfolio-intro text-white" >
+        <span>Proffesional Photographer</span>
+        <h2>My Portfolio</h2>
+        <ul class="portfolio-filter controls">
+{% for element in kategorie_gallery %}
+          <li class="control" data-filter="all">{{element.title}}</li>
+
+  {% endfor %}
+        </ul>
+      </div>
+    </div>
+    {% for element in kategorie_gallery %}
+    {% for element in bilder_gallery.all %}
+    <!-- Item -->
+    <a href="portfolio-single.html" class="grid-item mix portfolio-item __big set-bg sensual" data-setbg="{{element.bild.large.url}}"></a>
+
+
+  {% endfor %}
+    {% endfor %}
+  </div>
+</section>
+
+
+	{% endblock %}

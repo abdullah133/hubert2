@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="zxx">
+<head>
+	<title>{% block title %}Hubertus Mayr{% endblock %}</title>
+	<meta charset="UTF-8">
+	<meta name="description" content="Porto Photo Gallery HTML Template">
+	<meta name="keywords" content="porto, photo, html">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- Favicon -->
+	<link href="{% static 'base_app/img/logo_home.png' %}" rel="shortcut icon"/>
+
+	<!-- Google Font -->
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+	<!-- Stylesheets -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.css" integrity="sha256-fDncdclXlALqR3HOO34OGHxek91q8ApmD3gGldM+Rng=" crossorigin="anonymous" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.7/jquery.fullpage.min.css" integrity="sha256-27KRQA6ck6EiKWEkCpHR2NcEeAYnqz8Q5a83PYHh1z0=" crossorigin="anonymous" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.css" integrity="sha256-RdH19s+RN0bEXdaXsajztxnALYs/Z43H/Cdm1U4ar24=" crossorigin="anonymous" />
+
+	<!-- Main Stylesheets -->
+	<link rel="stylesheet" href="{% static 'assets/css/style.css' %}"/>
+	{% block head %}
+	{% endblock %}
+
+</head>
+<body class="home-page">
+	<!-- Page Preloder -->
+	<div id="preloder">
+		<div class="loader"></div>
+	</div>
+
+
+	  <!-- ======= Hero Section ======= -->
+
+
+	<!-- Header Section -->
+	<header class="header-section {% block news %}{% endblock %}">
+	  <div class="header-warp">
+	    <!-- logo -->
+			<a href="{% url 'about_app:about_page' %}" class="site-logo">
+	      <img src="{% static 'base_app/img/hubertus_logo_weiss_small.png' %}" alt="">
+	    </a>
+	    <div class="header-social">
+
+				<a href=""><i></i></a>
+	      <a href=""><i></i></a>
+				<a href="{{ kontaktinfo.facebook_link }}"><i class="fa fa-facebook"></i></a>
+	      <a href=""><i></i></a>
+	      <a href=""><i></i></a>
+
+
+
+	    </div>
+	    <div class="nav-switch">
+	      <i class="fa fa-bars"></i>
+
+	    </div>
+	    <!-- menu -->
+	    <ul class="main-menu">
+	      <li><a href="{% url 'base_app:home_page' %}">Home</a></li>
+	      <li><a href="{% url 'about_app:about_page' %}">Biografisches</a></li>
+	      <li><a href="{% url 'gallery_app:gallery_page' %}">Portfolio</a></li>
+	      <li><a href="{% url 'news_app:news_list_page' %}">News</a></li>
+
+	      <li><a href="{% url 'contact_app:contact_page' %}">Kontakt</a></li>
+	    </ul>
+	  </div>
+	</header>
+
+
+	<!-- Header Section end-->
+	{% block content %}
+
+	{% endblock %}
+
+
+
+
+
+	<!-- Footer Section -->
+	  {% include 'base_app/footer.html' %}
+	<!-- Footer Section end-->
+
+
+	<!--====== Javascripts & Jquery ======-->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js" integrity="sha256-4OK8Th0+5QJMThqlimytmqQvxjqMic4YATocjyuUh1w=" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/mixitup/3.3.1/mixitup.min.js" integrity="sha256-FnUP2HEr+LnsA4l1YflN3prVZISLwKs2FB7X9/fdPBE=" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/4.2.2/masonry.pkgd.min.js" integrity="sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI=" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.7/jquery.fullpage.min.js" integrity="sha256-SNaaqfQPa0XlEqQDrsurQ+Qq5XnhNrwHQXnZpdXlCEI=" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.7/jquery.fullpage.extensions.min.js" integrity="sha256-SjXUPmxobD+vLCws0crIzpdBrHgDjs8jamhUMv0eRac=" crossorigin="anonymous"></script>
+	<script src="{% static 'assets/js/main.js' %}"></script>
+
+
+	{% block js %}
+  {% endblock %}
+	</body>
+</html>
