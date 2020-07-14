@@ -8,23 +8,30 @@ class="header-section"
 {% block news_klasse_2 %}
 {% endblock %}
 {% block content %}
+<h1>test: {{ object.schrift_farbe }}</h1>
 
+{% if object.schrift_farbe == 'SCHWARZ' %}
+<h1>Meine schwarze Farbe</h1>
+{% else %}
+<h1>Meine weiße Farbe</h1>
+{% endif %}
 	<!-- portfilio single -->
     <section class="portfilio-single set-bg" data-setbg="{{object.bild.large.url}}">
         <div class="sp-container">
-            <div class="portfolio-single-content text-white">
-                <span>Proffesional Photographer</span>
-				<h2>Artistic Photos</h2>
+            <div class="portfolio-single-content {% if object.schrift_farbe == 'SCHWARZ' %}text-black{% else %}text-white{% endif %}">
+                <span>{{ object.kategorie }}</span>
+				<h2>{{ object.titel }}</h2>
 				<p>{{ object.text_1|linebreaks|urlize }}</p>
                <p>{{ object.text_2|linebreaks|urlize }}</p>
                <ul>
-                   <li><h6>Name:</h6><span>Hubertus Mayr</span></li>
+                   <li class="{% if object.schrift_farbe == 'SCHWARZ' %}text-black{% else %}text-white{% endif %}"><h6>Name:</h6><span>Hubertus Mayr</span></li>
                    <li><h6>Post:</h6><span>{{ object.datum }}</span></li>
 
                </ul>
             </div>
         </div>
 	</section>
+
 	<!-- Portfolio single end -->
 
 

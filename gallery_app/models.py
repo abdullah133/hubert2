@@ -16,6 +16,10 @@ from django.urls import reverse
 #     def __init__(self, arg):
 #         super(, self).__init__()
 #         self.arg = arg
+farbe_waehlen = [
+    ('SCHWARZ', 'Schwarz'),
+    ('WEISS', 'Weiß'),
+]
 
 
 
@@ -41,6 +45,7 @@ class Bilder(models.Model):
     kategorie = models.ForeignKey(Kategorien, on_delete=models.CASCADE)
     bild = StdImageField("Bild",upload_to='News/bilder/', blank=True, null=True, variations={'large': (1200, 600),'middle': (600, 300)})
     datum = models.DateTimeField("Post-Datum",blank=True, null=True)
+    schrift_farbe = models.CharField("Schriftfarbe",max_length=9, choices=farbe_waehlen, default='SCHWARZ')
 
     def __str__(self):
         return self.titel
